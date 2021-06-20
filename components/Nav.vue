@@ -1,0 +1,211 @@
+<template>
+  <v-card outlined class="rounded-xl cardadd">
+    <v-toolbar flat color="transparent">
+      <v-img max-height="65px" max-width="100px" src="logo2.png" eager></v-img>
+      <v-spacer></v-spacer>
+      <v-btn
+        v-for="link in arabicinfo.header.links"
+        :key="link.name"
+        text
+        class="mx-2 hidden-sm-and-down transition-fast-in-fast-out"
+        rounded
+        nuxt
+        :medium="$vuetify.breakpoint.mdAndUp"
+        :small="$vuetify.breakpoint.smAndDown"
+        @click="$vuetify.goTo(link.to, options)"
+      >
+        <v-icon left>
+          {{ link.icon }}
+        </v-icon>
+        {{ link.name }}
+      </v-btn>
+
+      <v-spacer></v-spacer>
+      <v-btn
+        class="hidden-md-and-up "
+        text
+        fab
+        :medium="$vuetify.breakpoint.mdAndUp"
+        :small="$vuetify.breakpoint.smAndDown"
+        @click="show = !show"
+      >
+        <v-icon>{{ show ? "mdi-chevron-up" : "mdi-menu" }}</v-icon>
+      </v-btn>
+      <v-speed-dial v-model="fab" direction="bottom" :transition="transition">
+        <template v-slot:activator>
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-model="fab"
+                text
+                fab
+                :medium="$vuetify.breakpoint.mdAndUp"
+                :small="$vuetify.breakpoint.smAndDown"
+                v-ripple="{ class: `secondary--text` }"
+                v-on="$vuetify.breakpoint.mdAndUp ? on : {}"
+                v-bind="attrs"
+              >
+                <v-icon v-if="fab">
+                  mdi-close
+                </v-icon>
+                <v-icon v-else>
+                  mdi-forum
+                </v-icon>
+              </v-btn>
+            </template>
+            <span>لتواصل معنا</span>
+          </v-tooltip>
+        </template>
+        <v-btn
+          href="https://m.me/zaf3r.s"
+          target="_blank"
+          fab
+          dark
+          small
+          color="accent"
+        >
+          <v-icon>mdi-facebook-messenger</v-icon>
+        </v-btn>
+        <v-btn
+          href="//api.whatsapp.com/send?phone=+967774550846"
+          target="_blank"
+          fab
+          dark
+          small
+          color="green"
+        >
+          <v-icon>mdi-whatsapp</v-icon>
+        </v-btn>
+        <v-btn fab dark small color="green">
+          <v-icon>mdi-android-messages</v-icon>
+        </v-btn>
+        <v-btn
+          href="mailto: zaf3r.s@gmail.com"
+          target="_blank"
+          fab
+          dark
+          small
+          color="red"
+        >
+          <v-icon>mdi-email</v-icon>
+        </v-btn>
+      </v-speed-dial>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            text
+            fab
+            :medium="$vuetify.breakpoint.mdAndUp"
+            :small="$vuetify.breakpoint.smAndDown"
+            @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+            v-bind="attrs"
+            v-on="$vuetify.breakpoint.mdAndUp ? on : {}"
+          >
+            <v-icon v-if="$vuetify.theme.dark">
+              mdi-moon-waning-crescent
+            </v-icon>
+            <v-icon v-else>
+              mdi-lightbulb-on
+            </v-icon>
+          </v-btn>
+        </template>
+        <span v-if="$vuetify.theme.dark">Dark</span>
+        <span v-else>Light</span>
+      </v-tooltip>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            text
+            fab
+            :medium="$vuetify.breakpoint.mdAndUp"
+            :small="$vuetify.breakpoint.smAndDown"
+            @click="$vuetify.rtl = !$vuetify.rtl"
+            v-bind="attrs"
+            v-on="$vuetify.breakpoint.mdAndUp ? on : {}"
+          >
+            <v-icon v-if="$vuetify.rtl">
+              mdi-abjad-arabic
+            </v-icon>
+            <v-icon v-else>
+              mdi-translate
+            </v-icon>
+          </v-btn>
+        </template>
+        <span v-if="$vuetify.rtl">عربي</span>
+        <span v-else>English</span>
+      </v-tooltip>
+    </v-toolbar>
+
+    <v-expand-transition>
+      <div v-show="show">
+        <v-divider></v-divider>
+
+        <v-row class="my-0 mx-0 py-4" justify="center">
+          <v-btn
+            v-for="link in arabicinfo.header.links"
+            :key="link.name"
+            text
+            class="transition-fast-in-fast-out"
+            rounded
+            nuxt
+            :medium="$vuetify.breakpoint.mdAndUp"
+            :small="$vuetify.breakpoint.smAndDown"
+            @click="$vuetify.goTo(link.to, options)"
+          >
+            <v-icon left>
+              {{ link.icon }}
+            </v-icon>
+            {{ link.name }}
+          </v-btn>
+        </v-row>
+      </div>
+    </v-expand-transition>
+  </v-card>
+</template>
+
+<script>
+import { mapState } from "vuex";
+export default {
+  data() {
+    return {
+      fab: false,
+      show: false,
+      transition: "slide-y-reverse-transition"
+    };
+  },
+  head() {
+    return {
+      title: this.$store.state.arabicinfo.header.title,
+      htmlAttrs: {
+        lang: this.$vuetify.rtl ? "ar" : "en"
+      },
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.$store.state.arabicinfo.header.description
+        }
+      ]
+    };
+  },
+  computed: {
+    options() {
+      return {
+        duration: 1000,
+        offset: 80,
+        easing: "easeInOutCubic"
+      };
+    },
+    ...mapState(["arabicinfo"])
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.cardadd {
+  margin: 10px 2.5% 0px 2.5%;
+  position: fixed;
+  width: 95%;
+  z-index: 5;
+}
+</style>
