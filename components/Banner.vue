@@ -1,12 +1,31 @@
 <template>
-  <v-parallax id="hii" height="750" src="hi1.png">
-    <v-row align="center" justify="center" class="ma-0">
-      <v-col class="text-center" lg="6" md="10" cols="12">
+  <div id="hii" style="height:100vh;">
+    <v-row
+      align="center"
+      justify="center"
+      style="height:100%;position: relative;"
+      class="ma-0"
+    >
+      <lottie-player
+        src="bestcover.json"
+        background="transparent"
+        speed="1"
+        style="
+    position: absolute;
+    width: 300px;
+   height:300px;
+   bottom:0px;
+    z-index: 2;"
+        :style="$vuetify.breakpoint.sm ? 'width: 450px;height:450px;' : ''"
+        autoplay
+        loop
+      ></lottie-player>
+      <v-col class="text-center mb-15" lg="5" md="7" cols="12">
         <v-img
           class="mb-5"
           style="margin:auto"
           max-height="100px"
-          max-width="150px"
+          max-width="200px"
           src="logo2.png"
           eager
         ></v-img>
@@ -14,61 +33,81 @@
           {{ arabicinfo.header.description }}
         </h4>
       </v-col>
+      <v-img
+        v-if="$vuetify.breakpoint.mdAndUp"
+        style="margin:auto; top:20px; position: absolute;  bottom:0px"
+        src="lg-cover.png"
+        eager
+      ></v-img>
+      <v-img
+        v-if="$vuetify.breakpoint.sm"
+        style="margin:auto; top:20px; position: absolute;  bottom:0px"
+        src="sm-cover.png"
+        eager
+      ></v-img>
+      <v-img
+        v-if="$vuetify.breakpoint.xs"
+        style="margin:auto; top:20px; position: absolute;  bottom:0px"
+        src="xs-cover.png"
+        eager
+      ></v-img>
+      <!-- <v-img
+        v-if="$vuetify.breakpoint.mdAndDown"
+        :width="$vuetify.breakpoint.xs ? '350px' : '460px'"
+        :height="$vuetify.breakpoint.xs ? '270px' : '370px'"
+        aspect-ratio="16:9"
+        style=" position: absolute; bottom:25px "
+        src="phone-cover.png"
+        eager
+      ></v-img> -->
     </v-row>
-    <!-- <v-img height="750px" width="100%" src="caver.png"></v-img> -->
-    <!-- <lottie-player
-      src="https://assets5.lottiefiles.com/packages/lf20_vubims6l.json"
-      background="transparent"
-      speed="1"
-      style="width: 300px; height: 300px;"
-      loop
-      autoplay
-    ></lottie-player> -->
-    <!-- <lottie-player
-      src="https://assets9.lottiefiles.com/packages/lf20_zIOoIe.json"
-      background="transparent"
-      speed="1"
-      style="width: 300px; height: 200px;position: absolute;
-    bottom: 0; left:10px"
-      loop
-      autoplay
-    ></lottie-player>
-    <lottie-player
-      src="https://assets9.lottiefiles.com/packages/lf20_zIOoIe.json"
-      background="transparent"
-      speed="1"
-      style="width: 300px; height: 200px;position: absolute;
-    bottom: 0; right:10px"
-      loop
-      autoplay
-    ></lottie-player> -->
-
+    <!-- 
     <lottie-player
       @click="$vuetify.goTo(`#about-us`, options)"
-      src="https://assets3.lottiefiles.com/packages/lf20_ADqq0Z.json"
+      src="line.json"
+      background="red"
+      speed="1"
+      style="
+      position: absolute;
+      "
+      autoplay
+    ></lottie-player> -->
+    <!-- <lottie-player
+      src="co2.json"
       background="transparent"
       speed="1"
-      style="width: 100px;
-      height: 100px;
-      bottom: 14px;
-      position: absolute;
-      left: 50%;
-      margin-left: -50px;"
-      loop
+      style="position: absolute;top: -20%; width: 250px;left: 10%;"
       autoplay
+      loop
     ></lottie-player>
-  </v-parallax>
+    <lottie-player
+      src="co1.json"
+      background="transparent"
+      speed="1"
+      style="position: absolute;top: -20%; width: 250px;right: 10%;"
+      autoplay
+      loop
+    ></lottie-player> -->
+  </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 
 export default {
+  transition: "slide",
   data() {
     return {};
   },
   computed: {
-    ...mapState(["arabicinfo"]),
+    ...mapState(["arabic", "english"]),
+    arabicinfo() {
+      if (this.$vuetify.rtl) {
+        return this.arabic;
+      } else {
+        return this.english;
+      }
+    },
     options() {
       return {
         duration: 1000,

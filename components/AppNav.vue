@@ -96,6 +96,7 @@
         :medium="$vuetify.breakpoint.mdAndUp"
         :small="$vuetify.breakpoint.smAndDown"
         @click="$vuetify.rtl = !$vuetify.rtl"
+        to="/en"
       >
         <v-icon v-if="$vuetify.rtl">
           mdi-translate
@@ -139,7 +140,7 @@ export default {
     return {
       drawer: false,
       links: [
-        { name: "الرئيسة", icon: "mdi-home", to: "/" },
+        { name: "الرئيسة", icon: "md-home_max", to: "/" },
         { name: "من نحن", icon: "mdi-shopping", to: "/product" },
         { name: "خدماتنا", icon: "mdi-shopping", to: "/product" },
         { name: "لماذا نحن", icon: "mdi-shopping", to: "/product" },

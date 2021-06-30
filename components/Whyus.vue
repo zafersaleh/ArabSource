@@ -2,12 +2,21 @@
   <v-container id="whyus" class="py-10">
     <v-row justify="center" class="ma-0">
       <v-col cols="12">
-        <h1 class="text-h4 font-weight-black text-center">
-          لماذا تختارنا
-        </h1>
+        <h1
+          v-animate-onscroll="{ down: 'animated heartBeat' }"
+          class="text-h4 font-weight-black text-center"
+          v-html="arabicinfo.whyus.title"
+        ></h1>
       </v-col>
 
-      <v-col cols="12" md="5">
+      <v-col cols="12" sm="8" md="5">
+        <v-img
+          class="moveup"
+          max-height="400px"
+          max-width="400px"
+          src="whycover.png"
+        ></v-img>
+
         <v-carousel
           :cycle="cycle"
           interval="3000"
@@ -20,12 +29,13 @@
           v-on:change="loop"
         >
           <v-carousel-item
-            v-for="(slide, i) in slides"
+            v-for="(slide, i) in arabicinfo.whyus.mores"
             :key="i"
             @mouseover="cycle = false"
             @mouseleave="cycle = true"
+            v-animate-onscroll="{ down: 'animated fadeIn' }"
           >
-            <v-img
+            <!-- <v-img
               max-height="400px"
               max-width="400px"
               src="HealthCar.jpg"
@@ -37,11 +47,11 @@
                 src="shapeimage.png"
                 eager
               ></v-img>
-            </v-img>
+            </v-img> -->
           </v-carousel-item>
         </v-carousel>
       </v-col>
-      <v-col cols="12" md="7">
+      <v-col cols="12" sm="10" md="7">
         <v-carousel
           :continuous="false"
           :show-arrows="false"
@@ -50,23 +60,24 @@
           v-model="model"
           height="350px"
         >
-          <v-carousel-item v-for="(slide, i) in slides" :key="i">
+          <v-carousel-item
+            v-animate-onscroll="{ down: 'animated fadeIn' }"
+            v-for="(slide, i) in arabicinfo.whyus.mores"
+            :key="i"
+          >
             <h1
               class="text-h4 font-weight-black my-10"
               @mouseover="cycle = false"
               @mouseleave="cycle = true"
             >
-              أدوية بدون وصفة طبية
+              {{ slide.name }}
             </h1>
             <p
               class="text-body-2"
               @mouseover="cycle = false"
               @mouseleave="cycle = true"
             >
-              الأدوية (OTC) هي الأدوية التي يمكن شراؤها بدون وصفة طبية. تستخدم
-              هذه الأدوية في تخفيف أعراض الأمراض الشائعة مثل الام الجسم والحمى،
-              تخفف هذه الأدوية من الصداع وألم الجسم والحكة، بينما تساعد بعض
-              الأدوية على معالجة المشاكل المتكررة مثل الصداع النصفي والحساسية.
+              {{ slide.details }}
             </p>
           </v-carousel-item>
         </v-carousel>
@@ -76,6 +87,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   data() {
     return {
@@ -92,6 +105,14 @@ export default {
     };
   },
   computed: {
+    ...mapState(["arabic", "english"]),
+    arabicinfo() {
+      if (this.$vuetify.rtl) {
+        return this.arabic;
+      } else {
+        return this.english;
+      }
+    },
     loop() {
       if (this.model === 4) {
         setTimeout(() => {
@@ -104,6 +125,17 @@ export default {
 </script>
 
 <style lang="scss">
+.moveup {
+  animation: mover 1s infinite alternate;
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
 .shape {
   position: relative;
   background-color: red;

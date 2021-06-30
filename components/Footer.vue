@@ -1,21 +1,25 @@
 <template>
   <v-footer padless>
     <v-card class="flex" flat tile>
+      <v-divider class="mx-10"></v-divider>
+      <v-divider class="mx-10 mt-1"></v-divider>
       <v-container class="pt-10">
         <v-row justify="space-between" class="ma-0">
           <v-col cols="12" md="5">
-            <h1 class="subheading text-h5 font-weight-black my-2">من نحن</h1>
+            <h1 class="subheading text-h5 font-weight-black mb-5">
+              {{ arabicinfo.aboutus.title }}
+            </h1>
             <p style="text-align: justify;" class="text-caption mx-2">
               {{ arabicinfo.header.description }}
             </p>
 
-            <h1 class="subheading text-h6 font-weight-black my-2">
+            <h1 class="subheading text-h6 font-weight-blac kmy-5">
               {{ arabicinfo.footer.title }}
             </h1>
             <p class="text-caption mx-2">
               {{ arabicinfo.footer.more }}
             </p>
-            <div class="d-flex evenly mt-2">
+            <div class="d-flex evenly mt-4">
               <v-btn
                 v-for="link in arabicinfo.footer.contact"
                 :key="link.icon"
@@ -25,7 +29,7 @@
                 small
                 rounded
                 :color="link.color"
-                class="mx-2"
+                class="mx-2 mt-3"
               >
                 <v-icon>{{ link.icon }}</v-icon>
               </v-btn>
@@ -40,6 +44,7 @@
                 v-for="(item, i) in arabicinfo.header.links"
                 :key="i"
                 @click="$vuetify.goTo(item.to, options)"
+                v-ripple="{ class: `red--text` }"
               >
                 <v-list-item-icon>
                   <v-icon v-text="item.icon"></v-icon>
@@ -52,7 +57,7 @@
             </v-list>
           </v-col>
           <v-col cols="12" md="3">
-            <h1 class="subheading text-h6 font-weight-black my-2">
+            <h1 class="subheading text-h6 font-weight-black mb-5">
               {{ arabicinfo.footer.follow }}
             </h1>
             <div class="d-flex evenly mt-2">
@@ -64,8 +69,8 @@
                 fab
                 small
                 rounded
-                color="primary"
-                class="mx-2"
+                color="red"
+                class="mx-2 white--text"
               >
                 <v-icon>{{ socail.icon }}</v-icon>
               </v-btn>
@@ -75,7 +80,7 @@
               class="d-flex justify-md-end mt-15"
             >
               <v-btn
-                color="primary"
+                color="red"
                 large
                 outlined
                 rounded
@@ -95,7 +100,7 @@
               </v-btn>
 
               <v-btn
-                color="primary"
+                color="red"
                 large
                 outlined
                 rounded
@@ -120,7 +125,7 @@
 
       <v-divider></v-divider>
       <p class="py-2 ma-0 text-Subtitle-1 font-weight-black   text-center">
-        ©copyright {{ new Date().getFullYear() }} ArabRrsource
+        copyright© {{ new Date().getFullYear() }} ArabRrsource
       </p>
     </v-card>
   </v-footer>
@@ -131,7 +136,14 @@ import { mapState } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["arabicinfo"])
+    ...mapState(["arabic", "english"]),
+    arabicinfo() {
+      if (this.$vuetify.rtl) {
+        return this.arabic;
+      } else {
+        return this.english;
+      }
+    }
   },
 
   data() {
@@ -145,7 +157,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .heightcol {
   height: 320px;
 }
@@ -157,5 +169,11 @@ export default {
 }
 .evenly {
   justify-content: space-evenly;
+}
+.theme--light.v-list {
+  background: transparent !important;
+}
+.theme--dark.v-list {
+  background: transparent !important;
 }
 </style>

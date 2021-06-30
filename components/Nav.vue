@@ -10,6 +10,7 @@
         class="mx-2 hidden-sm-and-down transition-fast-in-fast-out"
         rounded
         nuxt
+        v-ripple="{ class: `red--text` }"
         :medium="$vuetify.breakpoint.mdAndUp"
         :small="$vuetify.breakpoint.smAndDown"
         @click="$vuetify.goTo(link.to, options)"
@@ -28,6 +29,7 @@
         :medium="$vuetify.breakpoint.mdAndUp"
         :small="$vuetify.breakpoint.smAndDown"
         @click="show = !show"
+        v-ripple="{ class: `red--text` }"
       >
         <v-icon>{{ show ? "mdi-chevron-up" : "mdi-menu" }}</v-icon>
       </v-btn>
@@ -41,7 +43,7 @@
                 fab
                 :medium="$vuetify.breakpoint.mdAndUp"
                 :small="$vuetify.breakpoint.smAndDown"
-                v-ripple="{ class: `secondary--text` }"
+                v-ripple="{ class: `red--text` }"
                 v-on="$vuetify.breakpoint.mdAndUp ? on : {}"
                 v-bind="attrs"
               >
@@ -63,6 +65,7 @@
           dark
           small
           color="accent"
+          v-ripple="{ class: `red--text` }"
         >
           <v-icon>mdi-facebook-messenger</v-icon>
         </v-btn>
@@ -73,6 +76,7 @@
           dark
           small
           color="green"
+          v-ripple="{ class: `red--text` }"
         >
           <v-icon>mdi-whatsapp</v-icon>
         </v-btn>
@@ -86,6 +90,7 @@
           dark
           small
           color="red"
+          v-ripple="{ class: `red--text` }"
         >
           <v-icon>mdi-email</v-icon>
         </v-btn>
@@ -100,6 +105,7 @@
             @click="$vuetify.theme.dark = !$vuetify.theme.dark"
             v-bind="attrs"
             v-on="$vuetify.breakpoint.mdAndUp ? on : {}"
+            v-ripple="{ class: `red--text` }"
           >
             <v-icon v-if="$vuetify.theme.dark">
               mdi-moon-waning-crescent
@@ -122,6 +128,8 @@
             @click="$vuetify.rtl = !$vuetify.rtl"
             v-bind="attrs"
             v-on="$vuetify.breakpoint.mdAndUp ? on : {}"
+            :to="$vuetify.rtl ? '/en' : '/'"
+            v-ripple="{ class: `red--text` }"
           >
             <v-icon v-if="$vuetify.rtl">
               mdi-abjad-arabic
@@ -151,6 +159,7 @@
             :medium="$vuetify.breakpoint.mdAndUp"
             :small="$vuetify.breakpoint.smAndDown"
             @click="$vuetify.goTo(link.to, options)"
+            v-ripple="{ class: `red--text` }"
           >
             <v-icon left>
               {{ link.icon }}
@@ -173,21 +182,7 @@ export default {
       transition: "slide-y-reverse-transition"
     };
   },
-  head() {
-    return {
-      title: this.$store.state.arabicinfo.header.title,
-      htmlAttrs: {
-        lang: this.$vuetify.rtl ? "ar" : "en"
-      },
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: this.$store.state.arabicinfo.header.description
-        }
-      ]
-    };
-  },
+
   computed: {
     options() {
       return {
@@ -196,7 +191,14 @@ export default {
         easing: "easeInOutCubic"
       };
     },
-    ...mapState(["arabicinfo"])
+    ...mapState(["arabic", "english"]),
+    arabicinfo() {
+      if (this.$vuetify.rtl) {
+        return this.arabic;
+      } else {
+        return this.english;
+      }
+    }
   }
 };
 </script>

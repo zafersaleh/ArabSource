@@ -14,12 +14,6 @@ import About from "@/components/About.vue";
 import Whyus from "@/components/Whyus.vue";
 import { mapState } from "vuex";
 export default {
-  components: {
-    Whyus,
-    About,
-    ServiceOne,
-    Banner
-  },
   computed: {
     ...mapState(["arabic", "english"]),
     arabicinfo() {
@@ -44,6 +38,15 @@ export default {
         }
       ]
     };
+  },
+  beforeCreate() {
+    this.$vuetify.rtl = false;
+  },
+  components: {
+    Whyus,
+    About,
+    ServiceOne,
+    Banner
   }
 };
 </script>

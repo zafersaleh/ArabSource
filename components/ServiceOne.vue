@@ -1,23 +1,57 @@
 <template>
-  <section id="services" class="service-one py-10 ">
+  <section
+    id="services"
+    :class="$vuetify.rtl ? 'ar-service-one' : 'en-service-one'"
+    class=" service-one py-10 "
+  >
+    <!-- <v-img
+      style="position: absolute;
+    margin-top: -71px;
+        opacity: 0.5;
+    right: 0px;"
+      max-height="400px"
+      max-width="100px"
+      src="aii.png"
+      eager
+    >
+    </v-img> -->
+    <v-img
+      style=" margin-top:-300px; opacity: 0.3; position: absolute;  right:0px"
+      src="left-01.png"
+      width="100px"
+      eager
+    ></v-img>
+    <v-img
+      style=" margin-top:400px; opacity: 0.3; position: absolute;  left:0px"
+      src="right-01.png"
+      width="100px"
+      eager
+    ></v-img>
     <div class="container">
-      <div class="block-title">
-        <h3 class="text-h4 font-weight-black">
+      <div class="block-title mx-8 ">
+        <h3
+          v-animate-onscroll="{ down: 'animated pulse' }"
+          class="text-h4 mb-5 font-weight-black"
+        >
           {{ arabicinfo.service.title }}
         </h3>
-        <h1 class="text-subtitle-1">
+        <h1
+          v-animate-onscroll="{ down: 'animated fadeInUp' }"
+          class="text-subtitle-1"
+        >
           {{ arabicinfo.service.description }}
         </h1>
       </div>
       <!-- /.block-title -->
-      <div class="row">
+      <div class="row" style="justify-content: center;">
         <div
-          class="col-md-6 col-lg-3"
+          class="col-md-6 col-sm-10 col-lg-3"
           v-for="item in arabicinfo.service.mores"
           :key="item.name"
+          v-animate-onscroll="{ down: 'animated fadeInUp' }"
         >
           <div class="service-one__box ">
-            <div class="service-one__icon primary">
+            <div class="service-one__icon red">
               <div
                 :class="
                   $vuetify.theme.dark
@@ -25,14 +59,16 @@
                     : 'service-one__icon-inner'
                 "
               >
-                <v-icon large>
+                <v-icon size="50px">
                   {{ item.icon }}
                 </v-icon>
               </div>
               <!-- /.service-one__icon-inner -->
             </div>
             <!-- /.service-one__icon -->
-            <h3>{{ item.name }}</h3>
+            <h3>
+              {{ item.name }}
+            </h3>
             <p class="text-justify">
               {{ item.details }}
             </p>
@@ -53,7 +89,14 @@ import { mapState } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["arabicinfo"])
+    ...mapState(["arabic", "english"]),
+    arabicinfo() {
+      if (this.$vuetify.rtl) {
+        return this.arabic;
+      } else {
+        return this.english;
+      }
+    }
   }
 };
 </script>
@@ -94,11 +137,25 @@ export default {
   justify-content: center;
 }
 
-.service-one [class*="col-"]:not(:last-of-type) {
+.ar-service-one [class*="col-"]:not(:last-of-type) {
   position: relative;
 }
 
-.service-one [class*="col-"]:not(:last-of-type)::before {
+.ar-service-one [class*="col-"]:not(:last-of-type)::before {
+  content: "";
+  width: 1px;
+  height: 230px;
+  background-color: #e4e4e4;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.en-service-one [class*="col-"]:not(:first-of-type) {
+  position: relative;
+}
+.en-service-one [class*="col-"]:not(:first-of-type)::before {
   content: "";
   width: 1px;
   height: 230px;
@@ -110,16 +167,22 @@ export default {
   transform: translateY(-50%);
 }
 
-@media (max-width: 1024px) {
-  .service-one [class*="col-"]:not(:first-of-type)::before {
+@media (max-width: 768px) {
+  .service-one [class*="col-"]::before {
     display: none;
   }
 }
 @media (max-width: 1024px) {
-  .service-one [class*="col-"]:nth-of-type(1)::before {
+  .en-service-one [class*="col-"]:nth-of-type(1)::before {
     display: none;
   }
-  .service-one [class*="col-"]:nth-of-type(3)::before {
+  .en-service-one [class*="col-"]:nth-of-type(3)::before {
+    display: none;
+  }
+  .ar-service-one [class*="col-"]:nth-of-type(2)::before {
+    display: none;
+  }
+  .ar-service-one [class*="col-"]:nth-of-type(4)::before {
     display: none;
   }
 }
