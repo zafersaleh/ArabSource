@@ -7,7 +7,7 @@
       class="ma-0"
     >
       <lottie-player
-        src="bestcover.json"
+        src="bcover.json"
         background="transparent"
         speed="1"
         style="
