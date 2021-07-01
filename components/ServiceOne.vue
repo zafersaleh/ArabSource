@@ -35,20 +35,20 @@
         >
           {{ arabicinfo.service.title }}
         </h3>
-        <h1
-          v-animate-onscroll="{ down: 'animated fadeInUp' }"
-          class="text-subtitle-1"
-        >
+        <h1 class="text-subtitle-1">
           {{ arabicinfo.service.description }}
         </h1>
       </div>
       <!-- /.block-title -->
-      <div class="row" style="justify-content: center;">
+      <div
+        v-animate-onscroll="{ down: 'animated fadeInUp' }"
+        class="row"
+        style="justify-content: center;"
+      >
         <div
           class="col-md-6 col-sm-10 col-lg-3"
           v-for="item in arabicinfo.service.mores"
           :key="item.name"
-          v-animate-onscroll="{ down: 'animated fadeInUp' }"
         >
           <div class="service-one__box ">
             <div class="service-one__icon red">

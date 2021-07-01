@@ -1,9 +1,13 @@
 <template>
   <v-container id="whyus" class="py-10">
-    <v-row justify="center" class="ma-0">
+    <v-row
+      v-animate-onscroll="{ down: 'animated fadeInUp' }"
+      justify="center"
+      class="ma-0"
+    >
       <v-col cols="12">
         <h1
-          v-animate-onscroll="{ down: 'animated heartBeat' }"
+          v-animate-onscroll="{ down: 'animated pulse' }"
           class="text-h4 font-weight-black text-center"
           v-html="arabicinfo.whyus.title"
         ></h1>
@@ -33,7 +37,6 @@
             :key="i"
             @mouseover="cycle = false"
             @mouseleave="cycle = true"
-            v-animate-onscroll="{ down: 'animated fadeIn' }"
           >
             <!-- <v-img
               max-height="400px"
@@ -61,7 +64,6 @@
           height="350px"
         >
           <v-carousel-item
-            v-animate-onscroll="{ down: 'animated fadeIn' }"
             v-for="(slide, i) in arabicinfo.whyus.mores"
             :key="i"
           >
@@ -114,7 +116,7 @@ export default {
       }
     },
     loop() {
-      if (this.model === 4) {
+      if (this.model === 6) {
         setTimeout(() => {
           this.model = 0;
         }, 3000);

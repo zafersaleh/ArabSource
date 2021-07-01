@@ -31,7 +31,11 @@
         autoplay
         loop
       ></lottie-player>
-      <v-row justify="center" class="ma-0">
+      <v-row
+        v-animate-onscroll="{ down: 'animated fadeInUp' }"
+        justify="center"
+        class="ma-0"
+      >
         <v-col cols="8" class="my-5">
           <h1
             v-animate-onscroll="{ down: 'animated pulse' }"
@@ -41,7 +45,6 @@
           </h1>
         </v-col>
         <v-col
-          v-animate-onscroll="{ down: 'animated fadeInUp' }"
           cols="12"
           lg="9"
           md="10"
@@ -49,10 +52,7 @@
           class="text-center"
           style="z-index: 3;"
         >
-          <h1
-            v-animate-onscroll="{ down: 'animated fadeInUp' }"
-            class="text-subtitle-1 text-justify"
-          >
+          <h1 class="text-subtitle-1 text-justify">
             {{ arabicinfo.aboutus.description }}
           </h1>
         </v-col>
@@ -65,12 +65,7 @@
           :key="data.name"
           style="height: auto;z-index: 3;"
         >
-          <v-card
-            v-animate-onscroll="{ down: 'animated fadeInUp' }"
-            elevation="1"
-            shaped
-            style="height: 100%"
-          >
+          <v-card elevation="1" shaped style="height: 100%">
             <lottie-player
               :src="data.icon"
               background="transparent"
