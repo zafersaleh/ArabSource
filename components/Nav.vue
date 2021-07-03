@@ -141,15 +141,15 @@
             v-ripple="{ class: `red--text` }"
           >
             <v-icon v-if="$vuetify.rtl">
-              mdi-abjad-arabic
+              mdi-translate
             </v-icon>
             <v-icon v-else>
               mdi-translate
             </v-icon>
           </v-btn>
         </template>
-        <span v-if="$vuetify.rtl">عربي</span>
-        <span v-else>English</span>
+        <span v-if="$vuetify.rtl">To English</span>
+        <span v-else>للعربي</span>
       </v-tooltip>
     </v-toolbar>
 
