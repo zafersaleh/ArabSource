@@ -7,7 +7,7 @@
         v-for="link in arabicinfo.header.links"
         :key="link.name"
         text
-        class="mx-2 hidden-sm-and-down transition-fast-in-fast-out"
+        class="mx-2 hidden-md-and-down transition-fast-in-fast-out"
         rounded
         nuxt
         v-ripple="{ class: `red--text` }"
@@ -23,7 +23,7 @@
 
       <v-spacer></v-spacer>
       <v-btn
-        class="hidden-md-and-up "
+        class="hidden-lg-and-up "
         text
         fab
         :medium="$vuetify.breakpoint.mdAndUp"
@@ -59,6 +59,28 @@
           </v-tooltip>
         </template>
         <v-btn
+          href="tel: +967777203161"
+          target="_blank"
+          fab
+          dark
+          small
+          color="green"
+        >
+          <v-icon>mdi-phone</v-icon>
+        </v-btn>
+        <v-btn
+          href="//api.whatsapp.com/send?phone=+967777203161"
+          target="_blank"
+          fab
+          dark
+          small
+          color="green"
+          v-ripple="{ class: `red--text` }"
+        >
+          <v-icon>mdi-whatsapp</v-icon>
+        </v-btn>
+
+        <v-btn
           href="https://m.me/zaf3r.s"
           target="_blank"
           fab
@@ -69,22 +91,9 @@
         >
           <v-icon>mdi-facebook-messenger</v-icon>
         </v-btn>
+
         <v-btn
-          href="//api.whatsapp.com/send?phone=+967774550846"
-          target="_blank"
-          fab
-          dark
-          small
-          color="green"
-          v-ripple="{ class: `red--text` }"
-        >
-          <v-icon>mdi-whatsapp</v-icon>
-        </v-btn>
-        <v-btn fab dark small color="green">
-          <v-icon>mdi-android-messages</v-icon>
-        </v-btn>
-        <v-btn
-          href="mailto: zaf3r.s@gmail.com"
+          href="mailto: shakethi@info.com"
           target="_blank"
           fab
           dark

@@ -3,7 +3,7 @@ export const state = () => ({
     header: {
       title: "خالد الشاحذي للأدوية والمستلزمات الطبية",
       description:
-        "خالد الشاحذي للأدوية والمستلزمات الطبية شركة عصرية حديثة توفر خدمة استيراد وتسويق وتوزيع أحدث الادوية والمستلزمات الطبية بأعلى مستويات الجودة وبأشكال صيدلانية على المستوى العالمي وبتكلفة اقتصادية منافسة",
+        "خالد الشاحذي للأدوية والمستلزمات الطبية شركة عصرية حديثة توفر خدمة استيراد وتسويق وتوزيع أحدث الادوية والمستلزمات الطبية  بأعلى مستويات الجودة وبأشكال صيدلانية على المستوى العالمي وبتكلفة اقتصادية منافسة",
       links: [
         { name: "الرئيسة", icon: "mdi-google-home", to: "#hii" },
         {
@@ -12,6 +12,11 @@ export const state = () => ({
           to: "#about-us"
         },
         { name: "خدماتنا", icon: "mdi-domain", to: "#services" },
+        {
+          name: "شركات ومصانع الادوية",
+          icon: "mdi-medical-bag",
+          to: "#Agents"
+        },
         {
           name: "لماذا تختارنا",
           icon: "mdi-help-rhombus-outline",
@@ -22,24 +27,24 @@ export const state = () => ({
     aboutus: {
       title: "من نحن",
       description:
-        "نحن شركة رائدة في السوق اليمني نعمل في مجال المستحضرات الصيدلانية والمنتجات الصحية منذ تأسيسها عام 2002. الترويج للمنتجات ثم توزيعها على السوق اليمني بأكمله .بدءاً من عام 2022، جعل خالد الشاحذي ميدكال التاريخ الطويل كواحد من اللاعبين لرئيسيين في سوق القطاع الصحي . خالد الشاحذي ميدكال يعرف كيفية انشاء طلب على المنتجات وكيفية جعل هذه المنتجات متاحة في كل مكان بالقرب من يد المستهلك . يتم ادارة خالد الشاحذي ميدكال خلال هيكل شركة منظم جيدا يتوافق مع أهدافنا وغاياتنا .موظفينا المؤهلين يقومون بالمهمة ويحققون الأهداف بأستخدام جميع التسهيلات التي تقدمها الشركة .كما توفر وحدة الموارد البشرية استراتيجيات ادارة حديثة.",
+        ".نحن شركة رائدة في السوق اليمني نعمل في مجال المستحضرات الصيدلانية والمنتجات الصحية منذ تأسيسها عام 2002. الترويج للمنتجات ثم توزيعها على السوق اليمني بأكمله .بدءاً من عام 2022، جعل خالد الشاحذي ميدكال التاريخ الطويل كواحد من اللاعبين الرئيسيين في سوق القطاع الصحي . خالد الشاحذي ميدكال يعرف كيفية إنشاء طلب على المنتجات وكيفية جعل هذه المنتجات متاحة في كل مكان بالقرب من يد المستهلك . يتم إدارة خالد الشاحذي ميدكال خلال هيكل شركة منظم جيداً يتوافق مع أهدافنا وغاياتنا .موظفينا المؤهلين يقومون بالمهمة ويحققون الأهداف بأستخدام جميع التسهيلات التي تقدمها الشركة .كما توفر وحدة الموارد البشرية استراتيجيات إدارة حديثة",
       mores: [
         {
           name: "مهمتنا",
           details:
-            "جعل هذ البيان هو هدفنا والبحث دائما عن الأفضل لعملائنا وكيف يمكننا تقديم أكثر مما يتوقعة عملؤنا ، هي واحدة من اهم قيمنا التي يعيشها كل موظف في شركتنا كل يوم وهذا ما جعلنا الخيار الأول للناس عندما يتعلق الأمر بتوفير منتجات و خدمات الرعاية الصيدلانية والصحية.تتخصص شركة خالد الشاحذي ميدكال في تقديم منتجات صيدلانية ورعاية صحية عالية الجودة بأسعار تنافسية لأسواق الشرق الأوسط وجنوب شرق اسيا.من خلال بناء شركة خالد الشاحذي ميدكال كأسم تجاري يجعل الناس خيارهم الأول يتعلق الأمر بمنتجات الأدوية والرعاية الصحية.تمكنا من أن نكون شركة رائدة في اسواق الشرق الاوسط وجنوب اسيا وكان اسم علامتنا التجارية مرادفاً للثقة والموثوقية",
+            ".جعل هذ البيان هو هدفنا والبحث دائماً عن الأفضل لعملائنا وكيف يمكننا تقديم أكثر مما يتوقعة عملاؤنا ، هي واحدة من اهم قيمنا التي يعيشها كل موظف في شركتنا كل يوم وهذا ما جعلنا الخيار الأول للناس عندما يتعلق الأمر بتوفير منتجات و خدمات الرعاية الصيدلانية والصحية.تتخصص شركة خالد الشاحذي ميدكال في تقديم منتجات صيدلانية ورعاية صحية عالية الجودة بأسعار تنافسية لأسواق الشرق الأوسط وجنوب شرق اسيا.من خلال بناء شركة خالد الشاحذي ميدكال كأسم تجاري يجعل الناس خيارهم الأول يتعلق الأمر بمنتجات الأدوية والرعاية الصحية.تمكنا من أن نكون شركة رائدة في اسواق الشرق الاوسط وجنوب اسيا وكان اسم علامتنا التجارية مرادفاً للثقة والموثوقية",
           icon: "https://assets1.lottiefiles.com/private_files/lf30_RfOqwp.json"
         },
         {
           name: "رؤيتنا",
           details:
-            "الايمان بالجودة والعمل الجماعي والنزاهة والاحترام نسعى للترتيب في المقام الاول ي استيراد وتوزيع وتسويق الأدوية والأجهزة الطبية",
+            ".الايمان بالجودة والعمل الجماعي والنزاهة والاحترام نسعى للترتيب في المقام الاول الى استيراد وتوزيع وتسويق الأدوية والأجهزة الطبية",
           icon: "https://assets2.lottiefiles.com/packages/lf20_omszt4va.json"
         },
         {
           name: "قيمنا",
           details:
-            "<span>نحو المجتمع<span><br>لتقديم المنتجات والخدمات التي تؤدي الى حياة مريحة أمنة وأفضل للناس<br><span>نحو الموظفين<span><br>لضمان الرضاء التام اموظفينا من خلال توفير أفضل بيئة عمل<br><span>نحو البيئة<span><br>إعطاء الأولوية لحمية البيءة من خلال المنتجات والخدمات الصديقة للبيئة",
+            "<span>نحو المجتمع<span><br>لتقديم المنتجات والخدمات التي تؤدي الى حياة مريحة أمنة وأفضل للناس<br><span>نحو الموظفين<span><br>لضمان الرضاء التام لموظفينا من خلال توفير أفضل بيئة عمل<br><span>نحو البيئة<span><br>إعطاء الأولوية لحمية البيئة من خلال المنتجات والخدمات الصديقة للبيئة",
           icon: "https://assets4.lottiefiles.com/packages/lf20_jcyhxkau.json"
         }
       ]
@@ -47,33 +52,39 @@ export const state = () => ({
     service: {
       title: "خدماتنا",
       description:
-        "تشارك شركة خالد الشاحذي ميدكال في كامل المبيعات وكذلك في المناقصات,شؤون الاستيراد والتسجيل والتسويق والترويج والتوزيع",
+        "تشارك شركة خالد الشاحذي ميدكال في كامل المبيعات وكذلك في المناقصات,شؤون الاستيراد والتسجيل والتسويق والترويج والتوزيع.",
       mores: [
         {
           name: "استيراد",
           details:
-            "نحن على معرفة جيدة بخصائص السوق ونقوم باخدخال اصناف جديدة كما نقوم بإستيراد الأدوية التى يحتاجها السوق من اوروبا والهند والشرق الاوسط",
+            "نحن على معرفة جيدة بخصائص السوق ونقوم بإدخال اصناف جديدة كما نقوم بإستيراد الأدوية التى يحتاجها السوق من اوروبا والهند والشرق الاوسط.",
           icon: "mdi-airplane-takeoff"
         },
         {
           name: "شؤون تسجيل",
           details:
-            "لدينا علاقات جيدة مع السلطات الصحية في البلد كما يوجد لدينا فريق خاص بالتسجيل والمعاملات",
+            "لدينا علاقات جيدة مع السلطات الصحية في البلد كما يوجد لدينا فريق خاص بالتسجيل والمعاملات.",
           icon: "mdi-content-save-cog-outline"
         },
         {
           name: "التسويق والترويج",
           details:
-            "لدينا خبرة جيدة في مجال البيع والتسويق للمنتجات ولدينا علاقات قوية في السوق من خلال معرفتنا بنقاط القوة التى نمتلكها وجودة المنتجات الذي يتم الترويج لها و نقوم بإستهداف الاطباء واليادلة وخبرا التجميل",
+            "لدينا خبرة جيدة في مجال البيع والتسويق للمنتجات ولدينا علاقات قوية في السوق من خلال معرفتنا بنقاط القوة التى نمتلكها وجودة المنتجات الذي يتم الترويج لها و نقوم بإستهداف الاطباء والصيادلة وخبرا التجميل.",
           icon: "mdi-cart-variant"
         },
         {
           name: "التوزيع",
           details:
-            "لدينا إدارة مستقلة للتوزيع حيث نقوم بتدريب وتأهيل وتقديم الدعم الفني للموزعين من اجل علاقات جيدة مع العملاء والعمل على خلق طلب للمنتجات",
+            "لدينا إدارة مستقلة للتوزيع حيث نقوم بتدريب وتأهيل وتقديم الدعم الفني للموزعين من اجل علاقات جيدة مع العملاء والعمل على خلق طلب للمنتجات.",
           icon: "mdi-handshake"
         }
       ]
+    },
+    agents: {
+      title: "شركات ومصانع الادوية",
+      description:
+        "مصانع الادوية الراغبين بان نكون وكلاء لهم اكتب شرح بان لدينا استعداد بالتعامل مع مصانع ادويه لا يوجد لها وكلاء باليمن وسوف نكون خير من يمثلهم وجعل منتجهم ذو اهميه في الاسواق اليمنيه يمكنكم مراسلتنا من خلال الايميل التالي",
+      email: ""
     },
     whyus: {
       title: "لماذا تختارنا <span class='text--red'>؟<span> ",
@@ -81,49 +92,49 @@ export const state = () => ({
         {
           name: "أدوية المستشفيات",
           details:
-            "التخصص الطبي الموجود في بعض البلدان كفرع للطب الباطني أو طي لأسرة ، يتعامل مع رعاية المرضى الحدين في المستشفى ... الغالبية العظمى من الأطباء الذين يشيرون إلى أنفسهم كمستشفيات يركزون ممارستهم على المرضى في المستشفيات.",
-          image: ""
+            "التخصص الطبي الموجود في بعض البلدان كفرع للطب الباطني أو طي لأسرة ، يتعامل مع رعاية المرضى الحدين في المستشفى .. الغالبية العظمى من الأطباء الذين يشيرون إلى أنفسهم كمستشفيات يركزون ممارستهم على المرضى في المستشفيات.",
+          image: "1.png"
         },
         {
           name: "المستلزمات الطبية",
           details:
-            "المستلزمات الطبية وهي الادوات التي تستخدم في المستشفيات والعيادات والمختبرات الطبية وتشمل تجهيز غرف العناية المركزه والأثاث الطبي للمستشفيات والادوات الجراحية وأجهزة التسخيص.",
-          image: "mdi-content-save-cog-outline"
+            "المستلزمات الطبية وهي الادوات التي تستخدم في المستشفيات والعيادات والمختبرات الطبية وتشمل تجهيز غرف العناية المركزه والأثاث الطبي للمستشفيات والادوات الجراحية وأجهزة التشخيص.",
+          image: "2.png"
         },
         {
           name: "أدوية بدون وصفة طبية",
           details:
             "الأدوية (OTC) هي الأدوية التي يمكن شراؤها بدون وصفة طبية. تستخدم هذه الأدوية في تخفيف أعراض الأمراض الشائعة مثل الام الجسم والحمى، تخفف هذه الأدوية من الصداع وألم الجسم والحكة، بينما تساعد بعض الأدوية على معالجة المشاكل المتكررة مثل الصداع النصفي والحساسية.",
-          image: "mdi-cart-variant"
+          image: "3.png"
         },
         {
           name: "المستحضرات الصيدلانية البيولوجية",
           details:
-            "المستحضرات الصيدلانية لبيولوجية، والمعروفة أيضا بالمنتج الطبي البيولوجي (al) ، او البيولوجي، هو أي منتج دوائي صناعي يتم تصنيعه من مصادر بيولوجية أو استخلاصها منه أو نصفه.",
-          image: "mdi-handshake"
+            "المستحضرات الصيدلانية البيولوجية، والمعروفة أيضا بالمنتج الطبي البيولوجي (al) ، او البيولوجي، هو أي منتج دوائي صناعي يتم تصنيعه من مصادر بيولوجية أو استخلاصها منه أو نصفه.",
+          image: "4.png"
         },
         {
           name: "منتجات صحة الطفل",
           details:
-            "تم تصميم منتجاتنا للاستخدام على الرضع والأطفال دون سن الثالثة . تم تصميم منتجات الأطفال خصيصا لتكون خفيفة وغير مزعجة وتستخدم المكونات التي يتم اختيارها لهذه الخصائص",
-          image: "mdi-handshake"
+            "تم تصميم منتجاتنا للاستخدام على الرضع والأطفال دون سن الثالثة . تم تصميم منتجات الأطفال خصيصا لتكون خفيفة وغير مزعجة وتستخدم المكونات التي يتم اختيارها لهذه الخصائص.",
+          image: "5.png"
         },
         {
           name: "مستحضرات التجميل",
           details:
             "مستحضرات التجميل هي منتجات تستخدم لتعزيز أو تغير مظهر الوجه والعطر أو نسيج الجسم . تم تصميم العديد من مستحضرات التجميل لإستخدامها على الوجه والجسم.",
-          image: "mdi-handshake"
+          image: "6.png"
         },
         {
           name: "الأدوية العشبية والطبيعية",
           details:
             "تباع كأقراص وكبسولات ومساحيق ومستخلصات ونباتات طازجة أو مجففة . يعتقد الكثير من الناس أن المنتجات التي تحمل علامة طبيعية دائما ما تكون أمنة وجيدة لهم.",
-          image: "mdi-handshake"
+          image: "7.png"
         }
       ]
     },
     footer: {
-      menu: "الصفحات",
+      menu: "الاقسام",
       description:
         "نحن شركة رائدة في السوق اليمني نعمل في مجال المستحضرات الصيدلانية والمنتجات الصحية منذ تأسيسها عام 2002. الترويج للمنتجات ثم توزيعها على السوق اليمني بأكمله .بدءاً من عام 2022، جعل خالد الشاحذي ميدكال التاريخ الطويل كواحد من اللاعبين لرئيسيين في سوق القطاع الصحي . خالد الشاحذي ميدكال يعرف كيفية انشاء طلب على المنتجات وكيفية جعل هذه المنتجات متاحة في كل مكان بالقرب من يد المستهلك . يتم ادارة خالد الشاحذي ميدكال خلال هيكل شركة منظم جيدا يتوافق مع أهدافنا وغاياتنا .موظفينا المؤهلين يقومون بالمهمة ويحققون الأهداف بأستخدام جميع التسهيلات التي تقدمها الشركة .كما توفر وحدة الموارد البشرية استراتيجيات ادارة حديثة.",
       title: "زورونا او تواصلوا معنا ",
@@ -131,32 +142,33 @@ export const state = () => ({
       mores: [],
       contact: [
         {
-          icon: "mdi-google-maps",
-          color: "yellow",
-          link: "https://m.me/zaf3r.s"
-        },
-        {
           icon: "mdi-phone",
           color: "green",
-          link: "https://m.me/zaf3r.s"
+          link: "tel: +967777203161"
         },
         {
           icon: "mdi-whatsapp",
           color: "green",
-          link: "//api.whatsapp.com/send?phone=+967774550846"
+          link: "//api.whatsapp.com/send?phone=+967777203161"
         },
+
         {
           icon: "mdi-email",
           color: "red",
-          link: "mailto: zaf3r.s@gmail.com"
+          link: "mailto: shakethi@info.com"
         },
         {
           icon: "mdi-facebook-messenger",
           color: "accent",
           link: "https://m.me/zaf3r.s"
+        },
+        {
+          icon: "mdi-google-maps",
+          color: "yellow",
+          link: "https://m.me/zaf3r.s"
         }
       ],
-      follow: "تابعنا ",
+      follow: "تابعونا ",
       socail: [
         {
           icon: "mdi-twitter",
@@ -194,6 +206,11 @@ export const state = () => ({
           to: "#about-us"
         },
         { name: "Services", icon: "mdi-domain", to: "#services" },
+        {
+          name: "Pharmaceutical companies and factories",
+          icon: "mdi-medical-bag",
+          to: "#Agents"
+        },
         {
           name: "Why us",
           icon: "mdi-help-rhombus-outline",
@@ -257,6 +274,12 @@ export const state = () => ({
         }
       ]
     },
+    agents: {
+      title: "Pharmaceutical companies and factories",
+      description:
+        "مصانع الادوية الراغبين بان نكون وكلاء لهم اكتب شرح بان لدينا استعداد بالتعامل مع مصانع ادويه لا يوجد لها وكلاء باليمن وسوف نكون خير من يمثلهم وجعل منتجهم ذو اهميه في الاسواق اليمنيه يمكنكم مراسلتنا من خلال الايميل التالي",
+      email: ""
+    },
     whyus: {
       title: "Why Us <span class='text--red'>?<span> ",
       mores: [
@@ -264,48 +287,48 @@ export const state = () => ({
           name: "Hospital medicines",
           details:
             "The medical specialty that exists in some countries as a branch of internal medicine or family folding, dealing with acute hospital care... The vast majority of physicians who refer to themselves as hospitals focus their practice on hospitalized patients.",
-          image: ""
+          image: "1.png"
         },
         {
           name: "Medical supplies",
           details:
             "Medical supplies, which are tools that are used in hospitals, clinics and medical laboratories, and include the preparation of intensive care rooms, medical furniture for hospitals, surgical tools and diagnostic devices.",
-          image: "mdi-content-save-cog-outline"
+          image: "2.png"
         },
         {
           name: "Over-the-counter medicines:",
           details:
             "Over-the-counter (OTC) medications are medicines that can be bought without a prescription. These medications are used to relieve symptoms of common illnesses such as body aches and fever. These medications relieve headaches, body aches and itching, while some medications help treat recurring problems such as migraines and allergies.",
-          image: "mdi-cart-variant"
+          image: "3.png"
         },
         {
           name: "Biopharmaceuticals",
           details:
             "A biopharmaceutical, also known as a biomedical product (al), or a biological, is any synthetic medicinal product that is manufactured from, extracted from, or half of biological sources.",
-          image: "mdi-handshake"
+          image: "4.png"
         },
         {
           name: "Baby Health Products",
           details:
             "Our products are designed for use on infants and children under the age of three. Baby products are specifically designed to be mild and non-irritating and use ingredients that are selected for these properties",
-          image: "mdi-handshake"
+          image: "5.png"
         },
         {
           name: "Makeup",
           details:
             "Cosmetics are products used to enhance or alter the appearance of the face, the fragrance, or the texture of the body. Many cosmetics are designed for use on the face and body.",
-          image: "mdi-handshake"
+          image: "6.png"
         },
         {
           name: "Herbal and natural medicines",
           details:
             "They are sold as tablets, capsules, powders, extracts and fresh or dried plants. Many people think that products labeled natural are always safe and good for them.",
-          image: "mdi-handshake"
+          image: "7.png"
         }
       ]
     },
     footer: {
-      menu: "Pages",
+      menu: "sections",
       description:
         "A  modern company that provides services of importing, marketing and distributing the latest medicines and medical supplies at the highest levels of quality and pharmaceutical forms at the global level and at a competitive economic cost.",
       title: "Visit us Or Contact us",
@@ -313,28 +336,29 @@ export const state = () => ({
       mores: [],
       contact: [
         {
-          icon: "mdi-google-maps",
-          color: "yellow",
-          link: "https://m.me/zaf3r.s"
-        },
-        {
           icon: "mdi-phone",
           color: "green",
-          link: "https://m.me/zaf3r.s"
+          link: "tel: +967777203161"
         },
         {
           icon: "mdi-whatsapp",
           color: "green",
-          link: "//api.whatsapp.com/send?phone=+967774550846"
+          link: "//api.whatsapp.com/send?phone=+967777203161"
         },
+
         {
           icon: "mdi-email",
           color: "red",
-          link: "mailto: zaf3r.s@gmail.com"
+          link: "mailto: shakethi@info.com"
         },
         {
           icon: "mdi-facebook-messenger",
           color: "accent",
+          link: "https://m.me/zaf3r.s"
+        },
+        {
+          icon: "mdi-google-maps",
+          color: "yellow",
           link: "https://m.me/zaf3r.s"
         }
       ],

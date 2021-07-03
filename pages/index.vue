@@ -3,6 +3,7 @@
     <Banner />
     <About />
     <ServiceOne />
+    <Agents />
     <Whyus />
   </div>
 </template>
@@ -12,9 +13,11 @@ import Banner from "@/components/Banner.vue";
 import ServiceOne from "@/components/ServiceOne.vue";
 import About from "@/components/About.vue";
 import Whyus from "@/components/Whyus.vue";
+import Agents from "@/components/Agents.vue";
 import { mapState } from "vuex";
 export default {
   components: {
+    Agents,
     Whyus,
     About,
     ServiceOne,

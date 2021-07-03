@@ -1,10 +1,10 @@
 <template>
-  <v-container id="whyus" class="py-10">
-    <v-row
-      v-animate-onscroll="{ down: 'animated fadeInUp' }"
-      justify="center"
-      class="ma-0"
-    >
+  <v-container
+    v-animate-onscroll="{ down: 'animated fadeInUp' }"
+    id="whyus"
+    class="py-10"
+  >
+    <v-row justify="center" class="ma-0">
       <v-col cols="12">
         <h1
           v-animate-onscroll="{ down: 'animated pulse' }"
@@ -13,12 +13,13 @@
         ></h1>
       </v-col>
 
-      <v-col cols="12" sm="8" md="5">
+      <v-col style="position: relative;" cols="12" sm="8" md="5">
         <v-img
           class="moveup"
           max-height="400px"
           max-width="400px"
           src="whycover.png"
+          style="position: absolute;left: 0px;right: 0px;z-index: 3;"
         ></v-img>
 
         <v-carousel
@@ -38,19 +39,12 @@
             @mouseover="cycle = false"
             @mouseleave="cycle = true"
           >
-            <!-- <v-img
-              max-height="400px"
-              max-width="400px"
-              src="HealthCar.jpg"
+            <v-img
+              max-height="350px"
+              max-width="350px"
+              :src="slide.image"
               eager
-            >
-              <v-img
-                max-height="400px"
-                max-width="400px"
-                src="shapeimage.png"
-                eager
-              ></v-img>
-            </v-img> -->
+            ></v-img>
           </v-carousel-item>
         </v-carousel>
       </v-col>

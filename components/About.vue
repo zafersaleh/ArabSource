@@ -1,6 +1,7 @@
 <template>
   <div style="box-shadow: -0px -3px 5px #CCC">
     <v-container
+      v-animate-onscroll="{ down: 'animated fadeInUp' }"
       style="position: relative"
       id="about-us"
       class="mb-10 pb-10 pt-20"
@@ -31,11 +32,7 @@
         autoplay
         loop
       ></lottie-player>
-      <v-row
-        v-animate-onscroll="{ down: 'animated fadeInUp' }"
-        justify="center"
-        class="ma-0"
-      >
+      <v-row justify="center" class="ma-0">
         <v-col cols="8" class="my-5">
           <h1
             v-animate-onscroll="{ down: 'animated pulse' }"
@@ -52,9 +49,11 @@
           class="text-center"
           style="z-index: 3;"
         >
-          <h1 class="text-subtitle-1 text-justify">
-            {{ arabicinfo.aboutus.description }}
-          </h1>
+          <v-card style="border-color:red" outlined>
+            <v-card-text class="text-subtitle-1 text-justify">
+              {{ arabicinfo.aboutus.description }}
+            </v-card-text>
+          </v-card>
         </v-col>
         <v-col
           cols="12"

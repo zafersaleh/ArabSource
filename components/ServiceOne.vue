@@ -3,6 +3,7 @@
     id="services"
     :class="$vuetify.rtl ? 'ar-service-one' : 'en-service-one'"
     class=" service-one py-10 "
+    v-animate-onscroll="{ down: 'animated fadeInUp' }"
   >
     <!-- <v-img
       style="position: absolute;
@@ -40,11 +41,7 @@
         </h1>
       </div>
       <!-- /.block-title -->
-      <div
-        v-animate-onscroll="{ down: 'animated fadeInUp' }"
-        class="row"
-        style="justify-content: center;"
-      >
+      <div class="row" style="justify-content: center;">
         <div
           class="col-md-6 col-sm-10 col-lg-3"
           v-for="item in arabicinfo.service.mores"
